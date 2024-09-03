@@ -1,4 +1,4 @@
-# AngularApp1 Project
+# Calculator Project
 
 This project is a .NET and Angular application that can be built and run using Docker. The application is designed to work with a MongoDB database and can be accessed locally via `localhost:8080`.
 
