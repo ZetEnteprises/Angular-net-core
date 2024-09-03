@@ -1,0 +1,21 @@
+<mat-card class="calculator-container">
+  <mat-toolbar color="primary" class="calculator-toolbar">
+    <div class="toolbar-content">
+      <mat-spinner *ngIf="isLoading$ | async" diameter="24"></mat-spinner>
+      <span>Calculator</span>
+    </div>
+  </mat-toolbar>
+
+  <div class="calculator">
+    <mat-form-field class="display" appearance="outline">
+      <input matInput [value]="(isLoading$ | async) ? 'Calculating...' : ((displayValue$ | async) ?? '0') " readonly>
+    </mat-form-field>
+
+    <div class="buttons">
+      <button mat-raised-button *ngFor="let button of buttons" (click)="onButtonClick(button)">
+        {{ button }}
+      </button>
+      <button mat-raised-button color="warn" (click)="clearDisplay()">C</button>
+    </div>
+  </div>
+</mat-card>
